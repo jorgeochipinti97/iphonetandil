@@ -73,8 +73,8 @@ export default function Home() {
           <ScrollArea className="w-screen whitespace-nowrap rounded-md ">
             {products
               .filter((p) => p.category == "iphone")
-              .map((e) => (
-                <CardProduct product={e} />
+              .map((e,index) => (
+                <CardProduct product={e} key={index}/>
               ))}
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
@@ -86,8 +86,8 @@ export default function Home() {
           <ScrollArea className="w-screen whitespace-nowrap rounded-md ">
             {products
               .filter((p) => p.category == "Accesorio")
-              .map((e) => (
-                <CardProduct product={e} />
+              .map((e,index) => (
+                <CardProduct product={e} key={index}/>
               ))}
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
