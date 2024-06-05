@@ -67,8 +67,8 @@ const Page = () => {
       <div className="flex justify-center">
         <div className="grid grid-cols-1 md:grid-cols-3 w-10/12 mt-5 ">
           {productos &&
-            productos.map((e) => (
-              <div className="flex justify-center">
+            productos.map((e,index) => (
+              <div className="flex justify-center" key={index}>
                 <CardProduct product={e} />
               </div>
             ))}
