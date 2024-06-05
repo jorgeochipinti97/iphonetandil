@@ -38,7 +38,7 @@ import { useToast } from "../ui/use-toast";
 
 export const CheckoutForm = ({ total, products }) => {
   const { push } = useRouter();
-  const { register, handleSubmit, setValue } = useForm();
+  const { register, handleSubmit } = useForm();
   const [orderData, setOrderdata] = useState({});
   const [disabledisCheckout, setDisabledIscheckout] = useState(false);
   const mensaje = `Hola! recien compre estos productos ${products.map(
@@ -89,8 +89,8 @@ export const CheckoutForm = ({ total, products }) => {
         }
       );
 
-      // Si la petición es exitosa, redirige al usuario al 'init_point'
       if (data) {
+await axios.post('/api/orders',orderData)
         push(data.data.init_point);
       }
     } catch (err) {
