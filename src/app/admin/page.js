@@ -65,11 +65,11 @@ const Page = () => {
 
   return (
     <div className="bg-black">
-      <div className="bye h-screen w-screen flex items-center justify-center">
+      <div className="bye h-screen w-screen flex-col flex items-center justify-center">
         <Input className="w-6/12 bg-white" onChange={handlePasswordChange} />
         <Button
           onClick={handlePasswordSubmit}
-          className="bg-blue-500 text-white p-2 rounded"
+          className="my-2 text-white p-2 rounded"
         >
           Submit
         </Button>

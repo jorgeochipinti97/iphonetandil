@@ -26,10 +26,11 @@ export const CardProduct = ({ product }) => {
               {product.description}
             </p>
             <div className="flex justify-start items-center">
-              <p className="font-geist my-5 font-bold text-2xl">
-                {formatPrice(product.price)}
-                {product.isUSD && <span className="ml-2 ">USD</span>}
-              </p>
+              {product.category != "iphone" && (
+                <p className="font-geist my-5 font-bold text-2xl">
+                  {formatPrice(product.price)}
+                </p>
+              )}
             </div>
             {product.category == "iphone" ? (
               <Button onClick={() => push(enlaceWaLink_)}>Comprar ahora</Button>

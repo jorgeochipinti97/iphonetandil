@@ -13,7 +13,7 @@ export default function Home() {
   const mensajeUrlEncoded_ = encodeURIComponent(mensaje);
   const enlaceWaLink_ = `https://wa.me/5492484650674?text=${mensajeUrlEncoded_}`;
   return (
-    <main className="bg-[#f5f5f7] ">
+    <main className="bg-white ">
       <a href="/productos">
         <div className="fixed right-3 bottom-5 z-50 flex rounded-full mx-2 pr-2 bg-black border-2 border-black cursor-pointer">
           <svg
@@ -37,9 +37,9 @@ export default function Home() {
         <p className="font-geist text-xl md:text-4xl tracking-tighter text-[#e357ab] font-bold text-center  ">
           Bienvenido a
         </p>
-        <p className="font-geist text-3xl md:text-7xl mx-2 tracking-tighter text-[#e357ab] font-bold text-center ">
-          IMPORTANDIL STORE
-        </p>
+        <div className="flex justify-center ">
+        <img src="/logo.png" className="w-3/12" />
+        </div>
         <div className="flex justify-center">
           <p className="w-10/12 text-center mt-5 tracking-tighter opacity-70 font-light text-md md:text-2xl">
             Traemos lo mejor de Apple a Tandil, ofreciendo productos de última
@@ -65,7 +65,7 @@ export default function Home() {
           </a>
         </div>
       </section>
-      <section className=" py-28 bg-[#f5f5f7]">
+      <section className=" py-28 bg-white">
         <p className="font-geist font-bold text-4xl tracking-tighter md:text-7xl mb-5  opacity-50 mx-5 ">
           Descubre tu nuevo IPhone
         </p>{" "}
@@ -73,8 +73,8 @@ export default function Home() {
           <ScrollArea className="w-screen whitespace-nowrap rounded-md ">
             {products
               .filter((p) => p.category == "iphone")
-              .map((e,index) => (
-                <CardProduct product={e} key={index}/>
+              .map((e, index) => (
+                <CardProduct product={e} key={index} />
               ))}
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
@@ -86,8 +86,8 @@ export default function Home() {
           <ScrollArea className="w-screen whitespace-nowrap rounded-md ">
             {products
               .filter((p) => p.category == "Accesorio")
-              .map((e,index) => (
-                <CardProduct product={e} key={index}/>
+              .map((e, index) => (
+                <CardProduct product={e} key={index} />
               ))}
             <ScrollBar orientation="horizontal" />
           </ScrollArea>

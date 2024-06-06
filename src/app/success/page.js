@@ -4,7 +4,6 @@ import axios from "axios";
 import { useSearchParams } from "next/navigation";
 import React, { useEffect, useState } from "react";
 
-
 const Page = () => {
   const searchParams = useSearchParams();
   const [order, setOrder] = useState();
@@ -22,7 +21,6 @@ const Page = () => {
       status: status,
       provider: "mercadopago",
     });
-
   };
 
   useEffect(() => {
@@ -41,12 +39,7 @@ const Page = () => {
 
   return (
     <div className="h-screen flex flex-col items-center justify-center">
-      <div className="flex justify-center">
-      <img src="/logo.png" className="w-6/12"/>
-      </div>
-      <p className="font-geist font-bold tracking-tighter text-center text-xl md:text-4xl">¡Muchas gracias por tu compra!</p>
-      <p className="font-geist font-bold tracking-tighter text-center text-xl md:text-4xl">Aqui puedes descargar </p>
-      {order && <a className="bg-violet-500 p-3 rounded-xl mt-10 text-white shadowLow" href={`${order.fileUrl}`}>Descargar</a>}
+
     </div>
   );
 };
