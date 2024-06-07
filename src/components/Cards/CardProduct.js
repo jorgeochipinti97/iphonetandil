@@ -17,7 +17,7 @@ export const CardProduct = ({ product }) => {
     <div className="mx-5 z-40 w-fit flex justify-center my-5 md:my-0">
       {product && (
         <Card className=" p-5 w-[300px] md:w-[400px]">
-          <CardTitle className="text-center text-md mb-5 mx-2">
+          <CardTitle className="text-center text-xl mb-5 mx-2">
             {product.title}
           </CardTitle>
           <CardContent>
@@ -26,7 +26,7 @@ export const CardProduct = ({ product }) => {
                 src={product.images[0]}
                 alt=""
                 className={`rounded-xl${
-                  product.category == "iphone" ? " md:w-3/12" : " md:w-3/12"
+                  product.category == "iphone" ? " w-[300px]" : " md:w-[300px]"
                 }`}
               />
             </div>
