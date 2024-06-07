@@ -13,9 +13,7 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
-  const mensajepending = `Hola! recien intente comprar estos productos ${products.map(
-    (e) => `${e.title}`
-  )}  por mercadopago, y algo salió mal `;
+  const mensajepending = `Hola ImPortTandil! Estoy interesado en tus productos`;
 
   const mensajeUrlEncoded_ = encodeURIComponent(mensajepending);
   const enlaceWaLink_pending = `https://wa.me/5492494650674?text=${mensajeUrlEncoded_}`;
