@@ -16,10 +16,12 @@ export const CardProduct = ({ product }) => {
   return (
     <div className="mx-5 z-40 w-fit flex justify-center my-5 md:my-0">
       {product && (
-        <Card className="w-12/12 md:w-[400px] pt-5">
-          <CardTitle className="text-center mb-5">{product.title}</CardTitle>
+        <Card className=" p-5">
+          <CardTitle className="text-center mb-5 mx-2">{product.title}</CardTitle>
           <CardContent>
-            <img src={product.images[0]} alt="" className="rounded-xl" />
+            <div className="flex justify-center">
+            <img src={product.images[0]} alt="" className="rounded-xl h-[300px]" />
+            </div>
             <p className="font-geist tracking-tighter font-light mt-5">
               {product.description}
             </p>
