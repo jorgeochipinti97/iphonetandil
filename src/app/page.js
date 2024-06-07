@@ -33,10 +33,8 @@ export default function Home() {
           </span>
         </div>
       </a>
-      <section className="pt-10 h-fit md:min-h-screen">
-        <p className="font-geist text-xl md:text-4xl tracking-tighter text-[#e357ab] font-bold text-center  ">
-          Bienvenido a
-        </p>
+      <section className=" h-fit md:min-h-screen">
+
         <div className="flex justify-center ">
           <img src="/logo.png" className="w-12/12 md:w-3/12" />
         </div>
