@@ -10,7 +10,7 @@ export const CardProduct = ({ product }) => {
   const mensaje = `Hola! Estoy interesado en  ${product.title}   `;
   const { push } = useRouter();
   const mensajeUrlEncoded_ = encodeURIComponent(mensaje);
-  const enlaceWaLink_ = `https://wa.me/5492484650674?text=${mensajeUrlEncoded_}`;
+  const enlaceWaLink_ = `https://wa.me/5492494650674?text=${mensajeUrlEncoded_}`;
   const agregarProducto = useCartStore((state) => state.agregarProducto);
   const { toast } = useToast();
   return (
