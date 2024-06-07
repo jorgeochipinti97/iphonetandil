@@ -11,7 +11,7 @@ export default function Home() {
   const { products } = useProducts();
   const mensaje = `Hola! quisiera la ubicación del showroom`;
   const mensajeUrlEncoded_ = encodeURIComponent(mensaje);
-  const enlaceWaLink_ = `https://wa.me/5492484650674?text=${mensajeUrlEncoded_}`;
+  const enlaceWaLink_ = `https://wa.me/5492494650674?text=${mensajeUrlEncoded_}`;
   return (
     <main className="bg-white ">
       <a href="/productos">
