@@ -8,7 +8,7 @@ import { GeistMono } from "geist/font/mono";
 import { Cart } from "@/components/Cart";
 
 export const metadata = {
-  title: "IMPORTANDIL",
+  title: "ImPortTANDIL",
   description: "",
 };
 
