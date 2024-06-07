@@ -33,7 +33,7 @@ export default function Home() {
           </span>
         </div>
       </a>
-      <section className="pt-10 h-fit md:h-screen">
+      <section className="pt-10 h-fit md:min-h-screen">
         <p className="font-geist text-xl md:text-4xl tracking-tighter text-[#e357ab] font-bold text-center  ">
           Bienvenido a
         </p>
@@ -53,7 +53,7 @@ export default function Home() {
           />
         </div>
       </section>
-      <section className="mt-10 md:mt-0">
+      <section className="mt-10 md:mt-y">
         <p className="font-geist font-bold text-4xl text-center tracking-tighter md:text-7xl mb-5 mx-5 ">
           Visitanos en nuestro Showroom
         </p>
