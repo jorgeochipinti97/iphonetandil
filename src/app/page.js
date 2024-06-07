@@ -71,11 +71,15 @@ export default function Home() {
         </p>{" "}
         <div className="flex justify-center">
           <ScrollArea className="w-screen whitespace-nowrap rounded-md ">
+
+          <div className="flex">
+
             {products
               .filter((p) => p.category == "iphone")
               .map((e, index) => (
                 <CardProduct product={e} key={index} />
               ))}
+              </div>
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </div>

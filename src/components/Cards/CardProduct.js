@@ -7,9 +7,7 @@ import { useToast } from "../ui/use-toast";
 import useCartStore from "@/hooks/useCartStore";
 
 export const CardProduct = ({ product }) => {
-  const mensaje = `Hola! Estoy interesado en  ${product.title} - ${formatPrice(
-    product.price
-  )}  `;
+  const mensaje = `Hola! Estoy interesado en  ${product.title}   `;
   const { push } = useRouter();
   const mensajeUrlEncoded_ = encodeURIComponent(mensaje);
   const enlaceWaLink_ = `https://wa.me/5492484650674?text=${mensajeUrlEncoded_}`;
