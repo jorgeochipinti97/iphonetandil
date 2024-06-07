@@ -11,7 +11,7 @@ import gsap from "gsap";
 import { useEffect, useState } from "react";
 
 const Page = () => {
-  const password = "Paterson2020";
+  const password = "importandil2024";
   const [password_, setPassword_] = useState();
   useEffect(() => {
     // Recuperar la contraseña almacenada en localStorage
@@ -67,12 +67,7 @@ const Page = () => {
     <div className="bg-black">
       <div className="bye h-screen w-screen flex-col flex items-center justify-center">
         <Input className="w-6/12 bg-white" onChange={handlePasswordChange} />
-        <Button
-          onClick={handlePasswordSubmit}
-          className="my-2 text-white p-2 rounded"
-        >
-          Submit
-        </Button>
+
       </div>
       <div
         className="h-screen  items-center justify-center bg-black admin "

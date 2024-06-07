@@ -7,7 +7,7 @@ const ProductSchema = new mongoose.Schema({
   slug: { type: String },
   isUSD: { type: Boolean },
   description: { type: String },
-  price: { type: Number, required: true },
+  price: { type: Number },
   discountPrice: { type: Number },
   clientPrice: { type: Number },
   category: { type: String, required: true },

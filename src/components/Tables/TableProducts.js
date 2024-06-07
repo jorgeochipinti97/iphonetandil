@@ -21,14 +21,18 @@ import {
 import axios from "axios";
 import { formatPrice } from "@/lib/utils";
 import { ProductForm } from "../Forms/ProductForm";
+import { useToast } from "../ui/use-toast";
 
 
 export const TableProducts = () => {
   const { products, loading, error } = useProducts();
-
+const {toast}= useToast()
   const onDelete = async (_id) => {
     const response = await axios.delete(`/api/products?_id=${_id}`);
-    console.log(response);
+response &&      toast({
+  title: "Producto eliminado correctamente",
+  description: "",
+});
   };
 
   return (

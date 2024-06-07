@@ -22,6 +22,8 @@ export const ProductForm = ({ product }) => {
   const fileTypes = ["JPG", "PNG", "GIF", "JPEG", "AVIF", "WEBP"];
   const [images_, setImages_] = useState([]);
   const { toast } = useToast();
+  const [category, setCategory] = useState("");
+
   useEffect(() => {
     product && setValue("images", product.images);
     product && setImages_(product.images);
@@ -29,6 +31,7 @@ export const ProductForm = ({ product }) => {
     product && setValue("price", product.price);
     product && setValue("description", product.description);
     product && setValue("category", product.category);
+    product && setCategory(product.category);
     product && setValue("subcategory", product.subcategory);
     product && setValue("isUSD", product.isUSD);
   }, [product]);
@@ -78,7 +81,7 @@ export const ProductForm = ({ product }) => {
 
       response &&
         toast({
-          title: "Producto modificado correctamente",
+          title: "Producto creado correctamente",
           description: "",
         });
     } else {
@@ -95,6 +98,10 @@ export const ProductForm = ({ product }) => {
   };
   const isUSD = watch("isUSD", product ? product.isUSD : false);
 
+  const handleCategoryChange = (value) => {
+    setCategory(value);
+    setValue("category", value);
+  };
   return (
     <div>
       <section className="flex justify-center mt-10">
@@ -112,7 +119,7 @@ export const ProductForm = ({ product }) => {
         {images_ &&
           images_.map((e, index) => (
             <div
-              className="mx-2 flex justify-center flex-col items-center"
+              className="mx-2 flex justify-center w-10/12 flex-col items-center"
               key={index}
             >
               <img src={e} className="w-[50px]" />
@@ -132,23 +139,9 @@ export const ProductForm = ({ product }) => {
       <div className="flex justify-center">
         <form onSubmit={handleSubmit(onSubmit)} className="w-10/12">
           <Input placeholder="Titulo" className="my-2" {...register("title")} />
-          <Input
-            placeholder="Precio"
-            type="number"
-            className="my-2"
-            {...register("price")}
-          />
-            <div>
-        <input type="checkbox" id="precioEnDolares" {...register("isUSD")} checked={isUSD}/>
-        <label htmlFor="precioEnDolares" className="mx-2">Precio en dólares</label>
-      </div>
-          <Textarea
-            placeholder="descripcion"
-            className="my-2"
-            {...register("description")}
-          />
+
           <section className="my-2">
-            <Select onValueChange={(e) => setValue("category", e)}>
+            <Select onValueChange={(e) => handleCategoryChange(e)}>
               <SelectTrigger className="w-[300px]">
                 <SelectValue placeholder="Selecciona una categoria" />
               </SelectTrigger>
@@ -162,22 +155,19 @@ export const ProductForm = ({ product }) => {
             </Select>
           </section>
 
-          {/* <section>
-          <Select onValueChange={(e) => setValue("subcategory", e)}>
-            {" "}
-            <SelectTrigger className="w-[300px]">
-              <SelectValue placeholder="Selecciona una subcategoria" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Subcategoria</SelectLabel>
-                <SelectItem value="iphone">IPhone</SelectItem>
-                <SelectItem value="Accesorio">Accesorio</SelectItem>
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-        </section> */}
+          <Textarea
+            placeholder="descripcion"
+            className="my-2"
+            {...register("description")}
+          />
 
+          {category !== "iphone" && (
+            <div>
+              <label htmlFor="price">Precio</label>
+              <Input type="number" {...register("price", { required: true })} />
+              {errors.price && <p>El precio es requerido</p>}
+            </div>
+          )}
           <section>
             <Button className="mt-5">Enviar</Button>
           </section>
