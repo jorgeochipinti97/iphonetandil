@@ -38,7 +38,7 @@ export default function Home() {
           Bienvenido a
         </p>
         <div className="flex justify-center ">
-        <img src="/logo.png" className="w-3/12" />
+          <img src="/logo.png" className="w-3/12" />
         </div>
         <div className="flex justify-center">
           <p className="w-10/12 text-center mt-5 tracking-tighter opacity-70 font-light text-md md:text-2xl">
@@ -83,12 +83,14 @@ export default function Home() {
           Accesorios
         </p>{" "}
         <div className="flex justify-center">
-          <ScrollArea className="w-screen whitespace-nowrap rounded-md ">
-            {products
-              .filter((p) => p.category == "Accesorio")
-              .map((e, index) => (
-                <CardProduct product={e} key={index} />
-              ))}
+          <ScrollArea className="w-screen  whitespace-nowrap rounded-md ">
+            <div className="flex">
+              {products
+                .filter((p) => p.category == "Accesorio")
+                .map((e, index) => (
+                  <CardProduct product={e} key={index} />
+                ))}
+            </div>
             <ScrollBar orientation="horizontal" />
           </ScrollArea>
         </div>
